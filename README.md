@@ -1,9 +1,8 @@
-# Plantarium — v0.1.4 Repository Bootstrap + Guided Observation
+# Plantarium — v0.2.0 Virtual Grow Lab: Environment + Biological Clock
 
-Plantarium is a hardware-agnostic plant supervision and research core built around the idea that **each plant is a patient and a longitudinal research subject**.
+Plantarium is a hardware-agnostic plant supervision and research platform built around the idea that **each plant is a patient and a longitudinal research subject**.
 
-No physical hardware is required. Simulation, recorded data, future live sensors, and **human-entered measurements** all cross the same normalized evidence boundary.
-
+No physical hardware is required. Simulation, recorded data, future live sensors, and human-entered measurements all cross the same normalized evidence boundary.
 
 ## One-command Android / Termux test
 
@@ -13,19 +12,43 @@ Run this from **any directory**:
 curl -fsSL https://raw.githubusercontent.com/AceOfSpades52/Plantarium/main/termux-bootstrap.sh | bash
 ```
 
-The bootstrap helper keeps a persistent checkout at `~/plantarium`, installs missing Termux prerequisites when possible, safely updates the Git checkout, applies any new `plantarium-patch-*.zip` or `plantarium-tests-*.zip` files found in `~/storage/downloads`, and runs the complete verification suite. It records patch hashes so the same archive is never applied twice.
+The bootstrap keeps a persistent checkout at `~/plantarium`, safely updates it, applies new downloaded Plantarium patch/test bundles once, preserves local edits, and runs the complete verification suite.
 
-Local edits are never intentionally deleted. Before an update they are stashed and a human-readable backup diff/status is written under `~/plantarium/.plantarium-local/backups/`. If Git cannot restore those edits cleanly, the script stops and leaves the conflict visible instead of overwriting the user's work.
+## v0.2.0: first Virtual Grow Lab slice
 
-## Run it
+The simulator now has a deliberately separated three-layer model:
 
-Requires Python 3.10+ and no third-party packages.
+`Hidden true world -> observable sensor evidence -> Plantarium belief/reasoning`
+
+The new virtual world includes:
+- a deterministic simulation clock,
+- day/night photoperiod,
+- air temperature and humidity,
+- air VPD,
+- CO2,
+- PAR,
+- accumulated daily light integral (DLI),
+- growth-stage progression,
+- environment-sensitive hidden plant water demand.
+
+The care/research system **cannot read hidden growth stage or true demand through the sensor adapter**. Tests enforce that firewall. Soil/coco and DWC root-zone physics are intentionally deferred to later v0.2 slices.
+
+Run the lab directly:
+
+```bash
+python -m planticu.virtual_grow_demo
+```
+
+The demo prints both observable sensor values and a clearly marked developer-only hidden truth line so we can verify the simulator while proving the hidden fields were never stored as observations.
+
+## Other runnable slices
 
 ```bash
 python -m planticu demo --steps 18
 python -m planticu replay-demo
 python -m planticu research-demo
 python -m planticu guided-demo
+python -m planticu.virtual_grow_demo
 ```
 
 Tests:
@@ -34,41 +57,28 @@ Tests:
 python -m unittest discover -s tests -v
 ```
 
-On Termux:
-
-```bash
-sh termux-test.sh
-```
-
 ## Current care path
 
 `Provider -> Normalized Evidence -> Plant State -> Reasoning -> optional Deterministic Controller -> Treatment -> Response`
 
-Providers currently include:
-- simulation,
-- recorded CSV replay,
-- buffered future-live input,
-- composites,
-- human/manual measurements.
-
-Manual measurements preserve position/method provenance. Qualitative observations are stored separately rather than converted into fake numbers.
+Providers include simulation, recorded CSV replay, buffered future-live input, composites, and human/manual measurements.
 
 ## Living Almanac
-Knowledge is layered rather than overwritten:
+
+Knowledge remains layered rather than overwritten:
 
 `Established -> Global learned -> Species -> Cultivar/line -> Grow method -> Garden -> Individual plant`
 
-The current resolver selects relevant layers but deliberately does not pretend that network correlations are established science.
-
 ## Read the project
+
 Begin with `docs/CODE_TOUR.md`, then see:
-- `docs/TERMUX_WORKFLOW.md`
+- `docs/SIMULATION.md`
+- `docs/ARCHITECTURE.md`
+- `docs/SENSOR_PROVIDERS.md`
 - `docs/GUIDED_OBSERVATIONS.md`
 - `docs/LIVING_ALMANAC.md`
 - `docs/PRODUCT_MAP.md`
-- `docs/ARCHITECTURE.md`
-- `docs/SENSOR_PROVIDERS.md`
-- `docs/SIMULATION.md`
+- `docs/TERMUX_WORKFLOW.md`
 - `docs/GENOMICS.md`
 - `docs/EXPERIMENTS.md`
 - `STATUS.md`

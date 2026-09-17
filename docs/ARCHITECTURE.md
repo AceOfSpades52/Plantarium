@@ -56,3 +56,13 @@ An experiment links subjects to an environment, optional challenge profile, and 
 
 ## Knowledge
 The Living Almanac preserves multiple evidence scopes: established, global learned, species, cultivar/line, grow method, garden/setup, and individual plant. More-specific knowledge supplements rather than deletes broader knowledge. Candidate learned patterns require replication/validation before they can be treated as conventional guidance.
+
+
+## Virtual Grow Lab truth boundary
+The simulator has a stricter boundary than ordinary mock data:
+
+`True World -> Observation Adapter -> Normalized Evidence -> Plantarium Inference`
+
+`VirtualGrowSnapshot` may contain fields that would be unknowable to a real device, such as synthetic true plant demand. `VirtualGrowSensorAdapter` is allowed to expose only measurements that have a plausible future sensor/manual equivalent. Hidden truth must never be written into observation context as a shortcut.
+
+This lets future sensor noise/failure models sit between truth and inference without rewriting the plant domain.

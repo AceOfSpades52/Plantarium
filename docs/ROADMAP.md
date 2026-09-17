@@ -49,3 +49,12 @@ Beginner photo-first onboarding through research/enterprise modes on the same ev
 - One-command clone/update/patch/test bootstrap.
 - Local patch bundles are hash-tracked and applied once.
 - Local edits are preserved instead of silently overwritten.
+
+
+## Virtual Grow Lab sequence
+- [x] v0.2.0 — Environment + Biological Clock
+- [ ] v0.2.1 — Soil / Coco Root Zone
+- [ ] v0.2.2 — DWC / Hydro Reservoir
+- [ ] v0.2.3 — Nutrient Solution + Mixing
+- [ ] v0.2.4 — Sensor Faults / Drift / Dropout
+- [ ] v0.2.5 — Multiple Plants + Genetic Challenge Cohorts
