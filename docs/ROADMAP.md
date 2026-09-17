@@ -10,10 +10,13 @@ Perception contract, plant-state layer, genetics evidence, VCF import, environme
 First-class simulation, replay/live-provider contracts, observation provenance, monitor-only mode. **Complete.**
 
 ## v0.1.3 — Guided Observation + Living Almanac
-Human/manual measurements, qualitative observations, measurement context, care styles, and layered knowledge scopes. **Current.**
+Human/manual measurements, qualitative observations, measurement context, care styles, and layered knowledge scopes. **Complete.**
+
+## v0.1.4 — Repository Bootstrap
+Canonical GitHub repository, persistent Termux checkout, one-command clone/update/patch/test workflow, local-edit preservation. **Complete.**
 
 ## v0.2 — Virtual Grow Lab
-Parameterized soil/substrate and DWC/hydro scenarios, plant demand curves, climate/light/root chemistry, failure injection, multiple plants, challenge cohorts.
+Parameterized soil/substrate and DWC/hydro scenarios, plant demand curves, climate/light/root chemistry, failure injection, multiple plants, challenge cohorts. **Current.**
 
 ## v0.3 — Time-Series Plant Intelligence
 Consumption baselines, forecasting, anomaly detection, confidence calibration, sensor disagreement and stale-data handling.
@@ -41,15 +44,6 @@ Cross-grow pattern mining, candidate associations, safe controlled trials, repli
 
 ## v1.0 — Plant Medical Platform
 Beginner photo-first onboarding through research/enterprise modes on the same evidence-first core.
-
-
-## v0.1.4 — Repository bootstrap
-- Canonical `AceOfSpades52/Plantarium` GitHub repository.
-- Persistent Termux checkout at `~/plantarium`.
-- One-command clone/update/patch/test bootstrap.
-- Local patch bundles are hash-tracked and applied once.
-- Local edits are preserved instead of silently overwritten.
-
 
 ## Virtual Grow Lab sequence
 - [x] v0.2.0 — Environment + Biological Clock
