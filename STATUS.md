@@ -1,51 +1,52 @@
-# STATUS — v0.1.4
+# STATUS — v0.2.0
 
 ## Current slice
-**Repository Bootstrap + Guided Observation + Living Almanac Foundation**
+**Virtual Grow Lab: Environment + Biological Clock**
 
-No physical hardware is assumed available. A person using ordinary handheld tools is now a first-class observation provider, and knowledge is explicitly layered so individual experience can refine care without silently rewriting species/global horticultural knowledge.
+The v0.1.4 repository/bootstrap, manual-observation, Living Almanac, genetics/research, and provider contracts remain intact. v0.2.0 adds the first richer simulated world without pretending the simulation is validated plant physiology.
 
 ## Implemented
-- [x] All v0.1.0-v0.1.2 plant care, simulation, provider, research, genetics, and provenance behavior
-- [x] HumanMeasurementAdapter using the same `SensorAdapter` contract as hardware/simulation
-- [x] Manual measurement position/method/notes persisted as reading context
-- [x] Normal unit conversion for human-entered measurements
-- [x] GuidedObservationRequest plain-language measurement prompts
-- [x] Separate QualitativeObservation records for non-numeric evidence
-- [x] Hands-on/monitor-only care path with recommendations and no actuation
-- [x] Layered `KnowledgeEntry` model
-- [x] Living Almanac scope resolver: established/global/species/cultivar/grow-method/garden/plant
-- [x] Broad and plant-specific knowledge coexist without overwriting one another
-- [x] Product map documents home modules, hydro/DWC measurements, nutrient-mixing safety, care styles, genetics/research expansion
-- [x] Beginner code tour and stronger readability rules
-- [x] Guided/manual demo
-- [x] 18 automated tests
-- [x] Canonical GitHub repository: `AceOfSpades52/Plantarium`
-- [x] One-command Termux bootstrap works from any directory
-- [x] Persistent `~/plantarium` checkout instead of version-specific extracted folders
-- [x] Local edits preserved during updates
-- [x] Downloaded `plantarium-patch-*.zip` / `plantarium-tests-*.zip` bundles auto-applied once by SHA-256
+- [x] All v0.1.4 behavior preserved
+- [x] Deterministic `SimulationClock` with day/hour progression
+- [x] Configurable day/night photoperiod
+- [x] Simulated air temperature and relative humidity cycle
+- [x] Air VPD calculation
+- [x] Simulated CO2 cycle
+- [x] Smooth PAR daylight curve
+- [x] DLI accumulation and midnight reset with previous-day DLI retained in hidden truth
+- [x] Configurable growth-stage rules
+- [x] Environment-sensitive hidden water-demand calculation
+- [x] `VirtualGrowSensorAdapter` using the existing `SensorAdapter` contract
+- [x] Explicit truth firewall: hidden stage/demand are not sensor metrics or sensor context
+- [x] Environment readings retain synthetic provenance and simulation day/hour
+- [x] Virtual-grow demo with developer-only truth display
+- [x] 23 automated tests
+- [x] Existing one-command Termux bootstrap remains the normal test/update path
 
 ## Deliberately not claimed
-- [ ] The simulation is not validated plant physiology
-- [ ] No real cloud/network Almanac exists yet
-- [ ] No automated scientific promotion from candidate pattern to validated knowledge yet
-- [ ] No real computer vision is bundled yet
-- [ ] No physical sensor transport is implemented yet
-- [ ] No nutrient dosing controller is implemented yet
-- [ ] No variant-to-trait biological interpretation or causal genetics model yet
+- [ ] The virtual climate/demand equations are not validated crop physiology
+- [ ] Hidden simulator truth is not biological ground truth
+- [ ] No soil/coco root-zone physics yet
+- [ ] No DWC/hydro reservoir physics yet
+- [ ] No water temperature/dissolved-oxygen model yet
+- [ ] No nutrient/pH/EC solution dynamics yet
+- [ ] No sensor noise, drift, latency, or dropout yet
+- [ ] No actuator-failure simulation yet
+- [ ] No multi-plant resource competition yet
+- [ ] No real cloud/network Living Almanac yet
+- [ ] No physical sensor transport yet
 
-## Next acceptance condition
-Build the **Virtual Grow Lab** while preserving the same provider/knowledge/manual-observation contracts:
+## Next acceptance condition — v0.2.1
+Build **Soil / Coco Root Zone** on top of this world while preserving the truth firewall:
 
-- substrate/soil/coco root-zone scenarios
-- DWC/hydro reservoir scenarios
-- water temperature and dissolved oxygen
-- EC/pH/reservoir behavior
-- plant demand and growth stages
-- light/DLI/shared environment
-- configurable nutrient-solution state
-- failures/noise/drift/dropout
-- multiple plants/challenge cohorts
+- container water storage,
+- irrigation input,
+- plant uptake driven by hidden environmental demand,
+- drainage/runoff,
+- root-zone temperature,
+- substrate moisture observations,
+- pot-mass observations,
+- simple root EC state,
+- treatment response visible only through subsequent observations.
 
-The simulation must generate explicit synthetic provenance and remain replaceable by human/replayed/live data without domain or reasoning rewrites.
+The care engine must continue consuming sensor-style evidence rather than directly reading root-zone truth.

@@ -18,6 +18,7 @@ METRICS: dict[str, MetricDefinition] = {
     "substrate_moisture_pct": MetricDefinition("substrate_moisture_pct", "%", "Substrate/root-zone moisture estimate"),
     "air_temp_c": MetricDefinition("air_temp_c", "C", "Air temperature"),
     "relative_humidity_pct": MetricDefinition("relative_humidity_pct", "%", "Air relative humidity"),
+    "vpd_kpa": MetricDefinition("vpd_kpa", "kPa", "Air vapor pressure deficit"),
     "root_temp_c": MetricDefinition("root_temp_c", "C", "Root-zone temperature"),
     "leaf_temp_c": MetricDefinition("leaf_temp_c", "C", "Leaf/canopy temperature"),
     "root_ec_ms_cm": MetricDefinition("root_ec_ms_cm", "mS/cm", "Root-zone electrical conductivity"),
