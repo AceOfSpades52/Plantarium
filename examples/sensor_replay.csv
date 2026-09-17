@@ -1,0 +1,11 @@
+sample,plant_id,metric,value,unit,source,quality,channel_id,observed_at
+1,plant-replay-001,pot_mass_g,3210.0,g,exported_load_cell,0.99,scale_01,2026-09-16T12:00:00+00:00
+1,plant-replay-001,substrate_moisture_pct,67.0,%,exported_root_probe,0.92,moisture_01,2026-09-16T12:00:00+00:00
+1,plant-replay-001,air_temp_c,24.8,C,exported_air_sensor,0.98,temp_01,2026-09-16T12:00:00+00:00
+1,plant-replay-001,relative_humidity_pct,57.0,%,exported_air_sensor,0.98,rh_01,2026-09-16T12:00:00+00:00
+1,plant-replay-001,root_ec_ms_cm,1.48,mS/cm,exported_ec_probe,0.90,ec_01,2026-09-16T12:00:00+00:00
+2,plant-replay-001,pot_mass_g,3152.0,g,exported_load_cell,0.99,scale_01,2026-09-16T14:00:00+00:00
+2,plant-replay-001,substrate_moisture_pct,60.0,%,exported_root_probe,0.92,moisture_01,2026-09-16T14:00:00+00:00
+2,plant-replay-001,air_temp_c,25.3,C,exported_air_sensor,0.98,temp_01,2026-09-16T14:00:00+00:00
+2,plant-replay-001,relative_humidity_pct,54.0,%,exported_air_sensor,0.98,rh_01,2026-09-16T14:00:00+00:00
+2,plant-replay-001,root_ec_ms_cm,1.52,mS/cm,exported_ec_probe,0.90,ec_01,2026-09-16T14:00:00+00:00
